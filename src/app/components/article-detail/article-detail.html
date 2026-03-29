@@ -1,0 +1,36 @@
+<div class="max-w-4xl mx-auto">
+  <a routerLink="/articles" class="inline-flex items-center text-indigo-600 hover:text-indigo-800 mb-6 text-sm font-medium">
+    &larr; Back to posts
+  </a>
+
+  @if (store.selectedPost(); as post) {
+    <article class="bg-white rounded-lg shadow-sm border border-gray-200 p-8">
+      <h1 class="text-3xl font-bold text-gray-900 mb-4">
+        {{ post.title }}
+      </h1>
+
+      <div class="flex items-center gap-4 text-sm text-gray-500 mb-6 pb-6 border-b border-gray-100">
+        <span class="inline-flex items-center gap-1">
+          <span class="w-8 h-8 rounded-full bg-indigo-100 text-indigo-700 flex items-center justify-center text-sm font-medium">
+            U{{ post.user }}
+          </span>
+          <span class="font-medium text-gray-700">User {{ post.user }}</span>
+        </span>
+        <span class="ml-auto text-xs bg-gray-100 text-gray-600 px-2 py-0.5 rounded">
+          Post #{{ post.id }}
+        </span>
+      </div>
+
+      <div class="prose prose-gray max-w-none">
+        <p class="text-gray-700 leading-relaxed text-lg">{{ post.body }}</p>
+      </div>
+    </article>
+  } @else {
+    <div class="text-center py-12 text-gray-500">
+      <p class="text-lg">Post not found.</p>
+      <a routerLink="/articles" class="text-indigo-600 hover:underline mt-2 inline-block">
+        Browse all posts
+      </a>
+    </div>
+  }
+</div>
