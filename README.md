@@ -15,7 +15,7 @@ An exploration project for testing Angular with Capacitor for cross-platform mob
 
 ```bash
 npm install
-npm run dev # web dev server
+npm run start # web dev server
 npm run build # production build
 npx cap sync # sync web assets to native projects
 npx cap open android # open in Android Studio
